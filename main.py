@@ -1,4 +1,5 @@
 import pygame
+import random
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 
@@ -12,6 +13,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     screen.fill("white")
+    colors = ["red", "black", "blue", "yellow", "green"]
+    n = random.randint(10, 40)
+    for i in range(n):
+        drawCircle(colors[random.randint(0, 4)], random.randint(5, 20), random.randint(0, screen.get_width()), random.randint(0, screen.get_height()))
+
+    pygame.display.flip()
     
-    drawCircle("red", 40, 30, 30)
     
